@@ -1,0 +1,15 @@
+/home/will/Documents/Python Projects/sort-algorithms/sort/bin/Debug/net7.0/sort
+/home/will/Documents/Python Projects/sort-algorithms/sort/bin/Debug/net7.0/sort.deps.json
+/home/will/Documents/Python Projects/sort-algorithms/sort/bin/Debug/net7.0/sort.runtimeconfig.json
+/home/will/Documents/Python Projects/sort-algorithms/sort/bin/Debug/net7.0/sort.dll
+/home/will/Documents/Python Projects/sort-algorithms/sort/bin/Debug/net7.0/sort.pdb
+/home/will/Documents/Python Projects/sort-algorithms/sort/obj/Debug/net7.0/sort.csproj.AssemblyReference.cache
+/home/will/Documents/Python Projects/sort-algorithms/sort/obj/Debug/net7.0/sort.GeneratedMSBuildEditorConfig.editorconfig
+/home/will/Documents/Python Projects/sort-algorithms/sort/obj/Debug/net7.0/sort.AssemblyInfoInputs.cache
+/home/will/Documents/Python Projects/sort-algorithms/sort/obj/Debug/net7.0/sort.AssemblyInfo.cs
+/home/will/Documents/Python Projects/sort-algorithms/sort/obj/Debug/net7.0/sort.csproj.CoreCompileInputs.cache
+/home/will/Documents/Python Projects/sort-algorithms/sort/obj/Debug/net7.0/sort.dll
+/home/will/Documents/Python Projects/sort-algorithms/sort/obj/Debug/net7.0/refint/sort.dll
+/home/will/Documents/Python Projects/sort-algorithms/sort/obj/Debug/net7.0/sort.pdb
+/home/will/Documents/Python Projects/sort-algorithms/sort/obj/Debug/net7.0/sort.genruntimeconfig.cache
+/home/will/Documents/Python Projects/sort-algorithms/sort/obj/Debug/net7.0/ref/sort.dll
