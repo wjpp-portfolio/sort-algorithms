@@ -1,30 +1,74 @@
 ﻿using System;
-/*
+using System.ComponentModel.DataAnnotations;
 
-init randomised list of ints
-display ints current state
-display ints start state
-sort ints
-
-*/
-
-public class Integers
-{
-    public int[] members = new int[] {1, 3, 5, 2, 4, 9, 8, 6, 7};
-
-    public void Show()
-    {
-        Console.WriteLine(String.Join(" ", members));
-    }
-}
 class Program
 {
-    static void Main()
+    public static void Main()
     {
-        Integers a = new Integers();
+        int[] numbers = new int[] {7,6,5,4,3,2,1};
+
+        var a = new Sorter(numbers);
+        a.ShowUnSorted();
+        a.Bubble();
+    
+    }
+}
+
+class Sorter
+{
+    public int[] Sorted {get; }
+    public int[] UnSorted {get; set; }
+
+    public Sorter(int[] unsorted)
+    {
+        this.UnSorted = unsorted;
+    }
+    public void ShowSorted()
+    {
+        Display(Sorted);
+    }
+    public void ShowUnSorted()
+    {
+        Display(UnSorted);
+    }
+    private void Display(int[] listOfInts)
+    { 
+        foreach (var item in listOfInts)
+        {
+            Console.Write(item);
+        }
+        Console.WriteLine("");
+    }
+    public int[] Bubble()
+    {
+        int[] i = this.UnSorted;
+        int counter = 0;
+        bool changes;
+
+        do
+        {
+            changes = false;
+            for (int index = 0; index < i.Length - counter; index++)
+            {             
+                try
+                {
+                    if (i[index] > i[index + 1])
+                    {
+                        (i[index], i[index + 1]) = (i[index + 1], i[index]);
+                        changes = true;
+                    }
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    //Console.WriteLine("---Index Out Of Range");
+                }               
+            }
+
+            counter++;
  
-        a.Show();
+        } while (changes != false);
 
-
+        Display(i);  
+        return i;     
     }
 }
