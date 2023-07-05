@@ -9,7 +9,7 @@ class Program
         var a = new Sorter();
 
         Display(numbers);
-        var result = a.Merge(numbers);
+        var result = a.Quick(numbers);
         Display(result);
     
     }
@@ -109,5 +109,46 @@ class Sorter
         }
 
         return result;
+    }
+    public List<int> Quick(List<int> working_list)
+    {
+        return Quicksort(working_list, 0, working_list.Count - 1);
+    }
+    private List<int> Quicksort(List<int> working_list, int lo, int hi)
+    {
+        if (lo >= 0 & hi >= 0 & lo < hi)
+        {
+            var p = Quicksort_Partition(working_list, lo, hi);
+            Quicksort(working_list, lo, p);
+            Quicksort(working_list, p + 1, hi);
+        }
+        return working_list;
+    }
+    private int Quicksort_Partition(List<int> working_list, int lo, int hi)
+    {
+        double x = ((hi - lo) / 2) + lo;
+        var y = (int) Math.Floor(x);
+        var pivot = working_list[y];
+        var i = lo - 1;
+        var j = hi + 1;
+
+        while (true)
+        {
+            do 
+            {
+                i++;
+            } while (working_list[i] < pivot);
+
+            do
+            {
+                j--;
+            } while (working_list[j] > pivot);
+
+            if (i >= j)
+            {
+                return j;
+            }
+            (working_list[i], working_list[j]) = (working_list[j], working_list[i]);
+        }
     }
 }
