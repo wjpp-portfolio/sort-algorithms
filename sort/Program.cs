@@ -7,12 +7,12 @@ class Program
 {
     public static void Main()
     {
-        List<int> numbers = new List<int> {1,2,3,4,5,6,7};
+        List<int> numbers = new List<int> {0,-5,1,2,3,4,5,6,7};
 
         var a = new Sorter();
 
         Display(numbers);
-        var result = a.Select(numbers);
+        var result = a.Bubble(numbers);
         Display(result);
     
     }
@@ -49,7 +49,7 @@ public class Sorter
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    //Console.WriteLine("---Index Out Of Range");
+                   // Console.WriteLine($"---Index {index} Out Of Range. List length: {working_list.Count}");
                 }               
             }
 
@@ -157,11 +157,14 @@ public class Sorter
     }
     public List<int> Select(List<int> working_list)
     {
+        if (working_list.Count < 1) 
+        {
+            return working_list;
+        }
         List<int> result = new List<int>();
         int smallest;
         int smallest_index;
         do {
-            Console.WriteLine($"-------Working list count: {working_list.Count}");
             smallest = working_list[0];
             smallest_index = 0;
 
@@ -169,23 +172,14 @@ public class Sorter
             {
                 if (working_list[index] < smallest) 
                 {
-                    Console.WriteLine($"Current item: {working_list[index]}");
-                    Console.WriteLine($"Smallest so far: {smallest}");
                     smallest = working_list[index];
                     smallest_index = index;
                 }
-
-
             }
-            Console.WriteLine($"smallest index {smallest_index}");
-            Console.WriteLine($"smallest item {working_list[smallest_index]}");
             result.Add(working_list[smallest_index]);
             working_list.RemoveAt(smallest_index);
-
-
         } while (working_list.Count > 0);
 
         return result;
     }
-
 }
