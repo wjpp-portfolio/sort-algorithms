@@ -6,21 +6,35 @@ namespace Sort.Services;
 class Program
 {
     public static void Main()
+    //Demonstrating ability to sort for each algorithm
     {
-        List<int> numbers = new List<int> {0,-5,1,2,3,4,5,6,7};
+        
+        List<int> numbers = new List<int> {8,0,-5,1,2,3,4,5,6,7};
 
-        var a = new Sorter();
+        var sorter = new Sorter();
 
+        Console.Write("Unsorted ints: ");
         Display(numbers);
-        var result = a.Bubble(numbers);
-        Display(result);
+
+        Console.Write("Bubble sort: ");
+        Display(sorter.Bubble(numbers));
+
+        Console.Write("Merge sort: ");
+        Display(sorter.Merge(numbers));
+
+        Console.Write("Quick sort: ");
+        Display(sorter.Quick(numbers));
+
+        Console.Write("Select sort: ");
+        Display(sorter.Select(numbers));
     
     }
     private static void Display(List<int> listOfInts)
+    //sequentially prints out each List item
     { 
         foreach (var item in listOfInts)
         {
-            Console.Write(item);
+            Console.Write($"{item} ");
         }
         Console.WriteLine("");
     }
@@ -30,6 +44,7 @@ class Program
 public class Sorter
 {
     public List<int> Bubble(List<int> working_list)
+    //Bubble sort coded as my own interpretation of requirement
     {
         int counter = 0;
         bool changes;
@@ -60,6 +75,7 @@ public class Sorter
         return working_list;
     }
     public List<int> Merge(List<int> working_list)
+    //Merge sort written from psudocode, not my own implementation
     {
         if (working_list.Count <= 1) 
         {
@@ -115,6 +131,7 @@ public class Sorter
         return result;
     }
     public List<int> Quick(List<int> working_list)
+    //coded from psudocode
     {
         return Quicksort(working_list, 0, working_list.Count - 1);
     }
@@ -156,6 +173,7 @@ public class Sorter
         }
     }
     public List<int> Select(List<int> working_list)
+    //my own interpretation based on written description
     {
         if (working_list.Count < 1) 
         {
